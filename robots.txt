@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://clayjun71j.github.io/jackie-academy/sitemap.xml
