@@ -152,13 +152,13 @@
     <!-- 5. 구글 스프레드시트 실시간 연동 섹션 -->
     <section id="news-section" class="py-16 max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">재키 소식 & 사진 갤러리</h2>
-            <p class="text-sm text-slate-500 mt-2">구글 스프레드시트에 작성하신 내용이 디자인 옷을 입고 실시간으로 나타납니다.</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">JACKIE NEWS</h2>
+            <p class="text-sm text-slate-500 mt-2"> </p>
         </div>
         
         <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div class="col-span-full text-center py-12 text-slate-400">
-                <p class="animate-pulse text-sm font-medium">재키 소식을 실시간으로 불러오는 중입니다...</p>
+                <p class="animate-pulse text-sm font-medium">JACKIE NEWS를 실시간으로 불러오는 중입니다...</p>
             </div>
         </div>
     </section>
@@ -260,11 +260,15 @@
                 const grid = document.getElementById('news-grid');
                 grid.innerHTML = ''; 
 
-                // 데이터가 첫 번째 제목 줄 외에 없는 경우
-                if (lines.length <= 1) {
-                    grid.innerHTML = '<div class="col-span-full text-center text-slate-400 py-8 text-sm">등록된 소식이 없습니다. 구글 스프레드시트에 데이터를 추가해 보세요!</div>';
-                    return;
-                }
+// 데이터가 첫 번째 제목 줄 외에 없는 경우
+if (lines.length <= 1) {
+    // 🟢 상위 부모 섹션인 #news-section을 찾아서 화면에서 숨깁니다 (display: none)
+    const newsSection = document.getElementById('news-section');
+    if (newsSection) {
+        newsSection.style.display = 'none';
+    }
+    return;
+}
 
                 // 첫 줄 제목행 제외
                 const dataRows = lines.slice(1);
