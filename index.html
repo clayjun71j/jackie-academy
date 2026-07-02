@@ -3,127 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>재키어학원</title>
-    <!-- Tailwind CSS (디자인을 깔끔하게 만들어주는 라이브러리) -->
+    
+    <!-- 🔍 구글 및 네이버 검색 최적화 (SEO) 설정 -->
+    <title>재키어학원 - 파닉스부터 중고등 내신·수능 영어 완벽 대비</title>
+    <meta name="description" content="경북 구미시 도량동 위치. 초등 파닉스, 스토리북 기반 균형 수업부터 중등·고등부 내신 및 수능 만점을 위한 체계적인 맞춤형 영어 전문 커리큘럼을 제공합니다.">
+    <meta name="keywords" content="재키어학원, 구미영어학원, 도량동영어학원, 구미초등영어, 구미중등영어, 파닉스, 영어내신, 수능영어">
+    <link rel="canonical" href="https://clayjun71j.github.io/jackie-academy/">
+    
+    <!-- 오픈 그래프 (소셜 미디어 링크 공유 시 예쁘게 나오는 설정) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="재키어학원 - 시작이 다른 영어 경쟁력">
+    <meta property="og:description" content="초등 파닉스부터 중고등 내신·수능 완벽 대비. 1:1 맞춤 피드백과 균형 잡힌 4대 영역 수업.">
+    <meta property="og:url" content="https://clayjun71j.github.io/jackie-academy/">
+    <meta property="og:image" content="logo.png">
+
+    <!-- 🟢 네이버 소유권 확인 태그 -->
+    <meta name="naver-site-verification" content="google26c0abd26e3b0b8" />
+
+    <!-- Tailwind CSS 및 구글 폰트 -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- 구글 폰트 (눈이 편안한 폰트 적용) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
 
-    <!-- 헤더 / 내비게이션 -->
+    <!-- 1. 헤더 / 내비게이션 -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-xs">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <!-- 💡 로고 및 학원명 정렬 수정 완료 -->
-            <div class="flex items-center gap-2">
-                <img src="logo.png" alt="재키어학원 로고" class="h-10">
-                <span class="text-xl font-bold text-blue-600 tracking-tight">재키어학원</span>
-            </div>
+            <a href="#" class="flex items-center gap-2 group">
+                <img src="logo.png" alt="재키어학원 로고" class="h-10 transition-transform group-hover:scale-105">
+                <span class="text-xl font-bold text-slate-900 tracking-tight">재키어학원</span>
+            </a>
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                <a href="#features" class="hover:text-blue-600 transition">about Jackie</a>
-                <a href="#curriculum" class="hover:text-blue-600 transition">curriculum</a>
+                <a href="#about" class="hover:text-blue-600 transition">학원 소개</a>
+                <a href="#curriculum" class="hover:text-blue-600 transition">교육과정</a>
+                <a href="#notion-news" class="hover:text-blue-600 transition">학원 소식 & 갤러리</a>
+                <a href="#contact" class="hover:text-blue-600 transition">상담 및 문의</a>
             </nav>
             <div>
                 <a href="https://www.elsd.co.kr/member/login" 
-   target="_blank" 
-   class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-250 transform hover:-translate-y-0.5">
-    Anchor English 🚀
-</a>
+                   target="_blank" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5 inline-flex items-center gap-1">
+                    Anchor English 🚀
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- 메인 히어로 섹션 -->
-    <section class="relative bg-gradient-to-b from-blue-50 to-white py-20 md:py-32 overflow-hidden">
+    <!-- 2. 메인 히어로 섹션 -->
+    <section class="relative bg-gradient-to-b from-blue-50 via-sky-50/30 to-white py-20 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:16px_16px] opacity-70"></div>
         <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
-            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-4">
-                파닉스부터 수능까지
+            <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-6 animate-bounce">
+                파닉스부터 수능 만점까지
             </span>
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
-                시작이 달라지면 미래가 달라집니다.<br>
-                <span class="text-blue-600">재키어학원</span>에서 시작됩니다.
+            <h1 class="text-3xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                시작이 달라지면 미래가 다릅니다.<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">재키어학원</span>에서 증명합니다.
             </h1>
-            <p class="text-base md:text-lg text-slate-600 max-w-xl mx-auto mb-10 leading-relaxed">
-                초등부터 중등까지 철저한 기초 다지기와 고등학교 내신·수능 영어를 동시에 대비하는 체계적인 맞춤 커리큘럼으로, 중학교 때부터 고등학교 수준의 영어 실력을 쌓아 아이의 자신감과 경쟁력을 키워드립니다.
+            <p class="text-base md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                초등부터 중등까지 철저한 기초 다지기와 고등학교 내신·수능 영어를 동시에 대비하는 체계적인 맞춤 커리큘럼. 중학교 때 고등 수준의 영어 경쟁력을 완성하여 아이의 자신감을 키워드립니다.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="https://www.elsd.co.kr/member/login" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-250 transform hover:-translate-y-1 text-center">
-                    LOG IN 🚀
+            <div class="flex justify-center items-center">
+                <!-- 💡 교육과정 둘러보기 버튼 삭제 완료 -->
+                <a href="https://www.elsd.co.kr/member/login" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-base font-bold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-center">
+                    Anchor English 입장하기 🚀
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 학원 강점 섹션 -->
-    <section id="features" class="py-16 max-w-6xl mx-auto px-4">
+    <!-- 3. 학원 강점 섹션 -->
+    <section id="about" class="py-16 max-w-6xl mx-auto px-4 border-t border-slate-100">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">왜 재키어학원일까요?</h2>
+            <p class="text-sm text-slate-500 mt-2">재키만의 독보적인 3가지 학습 약속</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100">
+            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 hover:shadow-md transition">
                 <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-xl mb-4">🎯</div>
-                <h3 class="text-lg font-bold mb-2">듣기·말하기·읽기·쓰기 균형 수업</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">단순 암기 중심이 아닌, 듣기·말하기·읽기·쓰기 4가지 영역을 골고루 강화하는 균형 잡힌 수업을 통해 실제 영어 사용 능력을 체계적으로 키워드립니다.</p>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">4대 영역 균형 성장 수업</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">단순 암기 중심을 탈피하여 듣기·말하기·읽기·쓰기 4가지 영역을 유기적으로 연계하는 수업을 통해 진짜 영어 표현 능력을 체계적으로 완성합니다.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100">
+            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 hover:shadow-md transition">
                 <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-xl mb-4">🗣️</div>
-                <h3 class="text-lg font-bold mb-2">수준별 맞춤 피드백</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">학생의 현재 실력을 정확히 진단하고 부족한 영역을 1:1로 꼼꼼하게 보완합니다.</p>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">밀착형 1:1 맞춤 피드백</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">학생의 현재 성취 수준을 정밀하게 진단하고, 취약 영역에 대해 수업 직후 1:1로 꼼꼼하게 보완하여 구멍 없는 학습 리사이클을 만듭니다.</p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100">
+            <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 hover:shadow-md transition">
                 <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4">📱</div>
-                <h3 class="text-lg font-bold mb-2">철저한 영역별 학습능력 관리</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">각 영역별 학습 수준을 세밀하게 진단하고 관리하며, 아이의 약점을 빠르게 보완하고 강점을 극대화하는 체계적인 학습 관리를 제공합니다.</p>
+                <h3 class="text-lg font-bold mb-2 text-slate-900">철저한 데이터 기반 능력 관리</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">디지털 학습 관리 시스템을 연동하여 매일의 영역별 성취도를 누적 관리하며, 분석 리포트를 통해 아이의 강점은 극대화하고 약점은 빠르게 다듬습니다.</p>
             </div>
         </div>
     </section>
 
-    <!-- 교육과정 소개 섹션 -->
+    <!-- 4. 교육과정 소개 섹션 -->
     <section id="curriculum" class="py-16 bg-slate-100/50">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">교육과정 안내</h2>
-                <p class="text-sm text-slate-500 mt-2">초등부터 중등까지 연계되는 체계적인 로드맵</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">단계별 교육과정 안내</h2>
+                <p class="text-sm text-slate-500 mt-2">기초 파닉스부터 최상위 고등 수능까지 막힘없이 연결되는 최적의 로드맵</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <!-- 초등부 -->
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between">
+                <div class="bg-white rounded-2xl shadow-xs overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-lg transition">
                     <div class="p-8">
-                        <div class="text-xs font-bold text-sky-600 uppercase tracking-wider mb-2">Elementary School</div>
+                        <div class="text-xs font-bold text-sky-600 uppercase tracking-wider mb-2">Elementary Course</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-4">초등부 과정 (파닉스 ~ 기본 다지기)</h3>
                         <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 흥미 유발 위주의 스토리북 기반 수업</li>
-                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 정확한 발음과 규칙을 익히는 파닉스 마스터</li>
-                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 일상 표현 위주의 기본 회화 및 문장 확장 연습</li>
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 흥미를 유발하고 몰입감을 주는 스토리북 기반 표현 수업</li>
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 정확한 음가 원리와 발음 규칙을 마스터하는 탄탄한 파닉스</li>
+                            <li class="flex items-start"><span class="text-sky-500 mr-2">✔</span> 일상 영어 표현을 확장하여 자신 있게 구사하는 문장 확장 연습</li>
                         </ul>
                     </div>
-                    <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 text-xs text-slate-400">대상: 초등 1학년 ~ 6학년</div>
+                    <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span>대상: 초등 1학년 ~ 6학년</span>
+                        <span class="font-medium text-sky-600">멀티미디어 어학 시스템 연동</span>
+                    </div>
                 </div>
 
                 <!-- 중등부 -->
-                <div class="bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-100 flex flex-col justify-between">
+                <div class="bg-white rounded-2xl shadow-xs overflow-hidden border border-slate-100 flex flex-col justify-between hover:shadow-lg transition">
                     <div class="p-8">
-                        <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Middle School</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">중등부 과정 (내신 대비 ~ 심화 독해)</h3>
+                        <div class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-2">Middle School Course</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-4">중등부 과정 (내신 만점 ~ 심화 독해)</h3>
                         <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 학교별 교과서 완벽 분석 및 내신 고득점 대비</li>
-                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 서술형 평가 완벽 대비를 위한 핵심 문법 구조 정립</li>
-                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 수능 기초 체력을 기르는 중·장문 독해 훈련</li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 학교별 내신 교과서 완벽 분석 및 고난도 서술형 영작 집중 대비</li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 중·고등 상위권 도약을 위한 핵심 영문법 구조 및 어휘력 정립</li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-2">✔</span> 수능 1등급 기초 체력을 기르는 중·장문 논리 구조 독해 훈련</li>
                         </ul>
                     </div>
-                    <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 text-xs text-slate-400">대상: 중등 1학년 ~ 3학년</div>
+                    <div class="bg-slate-50 px-8 py-4 border-t border-slate-100 flex justify-between items-center text-xs text-slate-500">
+                        <span>대상: 중등 1학년 ~ 3학년</span>
+                        <span class="font-medium text-blue-600">철저한 수행평가 및 서술형 관리</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 하단 푸터 -->
+    <!-- 5. 노션 연동 전용 섹션 -->
+    <section id="notion-news" class="py-16 max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900">재키 소식 & 사진 갤러리</h2>
+            <p class="text-sm text-slate-500 mt-2">노션(Notion)을 통해 실시간으로 업데이트되는 학원의 생생한 이야기입니다.</p>
+        </div>
+        
+        <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-12 text-center text-slate-400">
+            <span class="text-4xl inline-block mb-3">🚀</span>
+            <p class="text-sm font-medium text-slate-600">노션 연동 준비 완료</p>
+            <p class="text-xs text-slate-400 mt-1">선생님의 노션 페이지 링크를 연결하면 이곳에 공지 및 사진이 나타납니다.</p>
+        </div>
+    </section>
+
+    <!-- 6. 상담 안내 및 오시는 길 -->
+    <section id="contact" class="py-16 max-w-6xl mx-auto px-4 border-t border-slate-100">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900">교육 상담 및 문의</h2>
+                <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                    아이의 정확한 영어 실력 진단과 향후 로드맵 설정을 위한 상담을 상시 진행하고 있습니다. 궁금하신 점이 있다면 편하게 전화 주시거나 방문해 주세요.
+                </p>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">📞</span>
+                        <span class="text-slate-700 font-medium">054-716-2580</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">📍</span>
+                        <span class="text-slate-700">경북 구미시 도봉로 82 602호 (도량동)</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold">⏰</span>
+                        <span class="text-slate-500">상담 가능 시간: 오후 1:30 ~ 오후 8:30 (주말 및 공휴일 제외)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-100 rounded-2xl h-64 flex flex-col items-center justify-center border border-slate-200 p-6 text-center shadow-xs relative overflow-hidden">
+                <div class="absolute inset-0 bg-slate-200/50 blur-xl"></div>
+                <div class="relative z-10 space-y-4">
+                    <p class="font-bold text-slate-800">📍 도량동 도봉로 82 (6층 602호)</p>
+                    <p class="text-xs text-slate-500">네이버 지도나 카카오맵에서 '재키어학원'을 검색하시면<br>더 정확한 도보 및 차량 경로를 확인하실 수 있습니다.</p>
+                    <div class="flex justify-center gap-3">
+                        <a href="https://map.naver.com/" target="_blank" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-medium shadow-xs transition">
+                            네이버 지도 열기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. 하단 푸터 -->
     <footer class="bg-slate-900 text-slate-400 text-sm py-12 border-t border-slate-800">
         <div class="max-w-6xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
             <div>
