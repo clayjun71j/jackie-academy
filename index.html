@@ -149,16 +149,14 @@
         </div>
     </section>
 
-    <!-- 5. 🟢 구글 스프레드시트 실시간 연동 섹션 -->
+    <!-- 5. 구글 스프레드시트 실시간 연동 섹션 -->
     <section id="news-section" class="py-16 max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">재키 소식 & 사진 갤러리</h2>
             <p class="text-sm text-slate-500 mt-2">구글 스프레드시트에 작성하신 내용이 디자인 옷을 입고 실시간으로 나타납니다.</p>
         </div>
         
-        <!-- 데이터가 뿌려질 카드 그리드 공간 -->
         <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 로딩 표시 (데이터를 불러오기 전 잠시 나타남) -->
             <div class="col-span-full text-center py-12 text-slate-400">
                 <p class="animate-pulse text-sm font-medium">재키 소식을 실시간으로 불러오는 중입니다...</p>
             </div>
@@ -216,45 +214,74 @@
         </div>
     </footer>
 
-    <!-- 🟢 구글 실시간 파싱 및 카드 자동 생성 스크립트 -->
+    <!-- 🟢 100% 호환 안전한 CSV 파싱 엔진 탑재 -->
     <script>
         const sheetId = '1ru9J2d9dYyA-TAU2pLh2I6oEPscD0tTVJm-fMkGGsd8';
-        const base = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json`;
+        // 첫 번째 시트를 강제로 CSV 텍스트 포맷으로 내려받는 주소 (가장 완벽함)
+        const csvUrl = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=0`;
 
-        fetch(base)
-            .then(res => res.text())
-            .then(data => {
-                // 구글 데이터의 불필요한 앞뒤 껍데기 텍스트 제거하고 깨끗한 JSON 구조로 변환
-                const jsonData = JSON.parse(data.substring(47, data.length - 2));
-                const rows = jsonData.table.rows;
+        // 간단한 CSV 파서 함수 (쉼표분리 처리)
+        function parseCSV(text) {
+            let p = '', r = [];
+            let q = false;
+            let row = [''];
+            for (let i = 0; i < text.length; i++) {
+                let c = text[i];
+                let next = text[i+1];
+                if (c === '"') {
+                    if (q && next === '"') { row[row.length - 1] += '"'; i++; }
+                    else { q = !q; }
+                } else if (c === ',' && !q) {
+                    row.push('');
+                } else if ((c === '\r' || c === '\n') && !q) {
+                    if (c === '\r' && next === '\n') { i++; }
+                    r.push(row);
+                    row = [''];
+                } else {
+                    row[row.length - 1] += c;
+                }
+            }
+            if (row.length > 1 || row[0] !== '') { r.push(row); }
+            return r;
+        }
+
+        fetch(csvUrl)
+            .then(res => {
+                if(!res.ok) throw new Error('Network response error');
+                return res.text();
+            })
+            .then(text => {
+                const lines = parseCSV(text);
                 const grid = document.getElementById('news-grid');
-                grid.innerHTML = ''; // 기존 로딩 문구 삭제
+                grid.innerHTML = ''; 
 
-                if (!rows || rows.length === 0) {
-                    grid.innerHTML = '<div class="col-span-full text-center text-slate-400 py-8 text-sm">등록된 소식이 없습니다. 구글 스프레드시트에 글을 추가해 보세요!</div>';
+                // 데이터가 첫 번째 제목 줄 외에 없는 경우
+                if (lines.length <= 1) {
+                    grid.innerHTML = '<div class="col-span-full text-center text-slate-400 py-8 text-sm">등록된 소식이 없습니다. 구글 스프레드시트에 데이터를 추가해 보세요!</div>';
                     return;
                 }
 
-                // 최신글이 맨 위로 올라오도록 역순(최신순) 정렬 처리
-                rows.reverse().forEach(row => {
-                    if(!row.c[0] && !row.c[1]) return; // 빈 줄 스킵
+                // 첫 줄 제목행 제외
+                const dataRows = lines.slice(1);
 
-                    // 칸막이 분배 (A열: 날짜, B열: 소식문구, C열: 사진링크)
-                    const date = row.c[0] ? row.c[0].v : '';
-                    const content = row.c[1] ? row.c[1].v : '';
-                    const photoUrl = row.c[2] ? row.c[2].v : '';
+                // 최신순 정렬 후 렌더링
+                dataRows.reverse().forEach(row => {
+                    if (row.length < 2 || (!row[0] && !row[1])) return;
 
-                    // 줄바꿈 문자(\n)가 웹 브라우저에서 먹히도록 교정
+                    const date = row[0] ? row[0].trim() : '';
+                    const content = row[1] ? row[1].trim() : '';
+                    const photoUrl = row[2] ? row[2].trim() : '';
+
+                    if (!date && !content) return;
+
                     const formattedContent = content.replace(/\n/g, '<br>');
 
-                    // 카드 하드웨어 바인딩 레이아웃 조립
                     let cardHtml = `
                         <div class="bg-white rounded-2xl overflow-hidden shadow-xs border border-slate-100 flex flex-col justify-between hover:shadow-md transition duration-200">
                             <div>
                     `;
 
-                    // 사진 링크가 정상 입력되어 있을 때만 상단 사진 영역 출력
-                    if (photoUrl && photoUrl.trim().startsWith('http')) {
+                    if (photoUrl && photoUrl.startsWith('http')) {
                         cardHtml += `
                             <div class="h-48 w-full overflow-hidden bg-slate-100 relative">
                                 <img src="${photoUrl}" alt="재키어학원 활동 소식 사진" class="w-full h-full object-cover hover:scale-105 transition duration-300">
@@ -279,7 +306,7 @@
             })
             .catch(err => {
                 console.error(err);
-                document.getElementById('news-grid').innerHTML = '<div class="col-span-full text-center text-red-500 py-8 text-sm">소식을 불러오는 도중 오류가 발생했습니다. 구글 시트 공유 권한을 확인해 주세요.</div>';
+                document.getElementById('news-grid').innerHTML = '<div class="col-span-full text-center text-red-500 py-8 text-sm">소식을 불러오는 도중 오류가 발생했습니다. 구글 시트가 [웹에 게시] 상태인지 다시 한번 확인해 주세요.</div>';
             });
     </script>
 </body>
