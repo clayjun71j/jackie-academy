@@ -29,6 +29,19 @@
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; }
         html { scroll-behavior: smooth; }
+        /* 노션 임베드 프레임 반응형 최적화 스타일 */
+        .notion-container {
+            position: relative;
+            width: 100%;
+            height: 700px;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+        .notion-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
@@ -71,7 +84,6 @@
                 초등부터 중등까지 철저한 기초 다지기와 고등학교 내신·수능 영어를 동시에 대비하는 체계적인 맞춤 커리큘럼. 중학교 때 고등 수준의 영어 경쟁력을 완성하여 아이의 자신감을 키워드립니다.
             </p>
             <div class="flex justify-center items-center">
-                <!-- 💡 교육과정 둘러보기 버튼 삭제 완료 -->
                 <a href="https://www.elsd.co.kr/member/login" target="_blank" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white text-base font-bold px-10 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all text-center">
                     Anchor English 입장하기 🚀
                 </a>
@@ -150,17 +162,16 @@
         </div>
     </section>
 
-    <!-- 5. 노션 연동 전용 섹션 -->
+    <!-- 5. 노션 실시간 연동 섹션 -->
     <section id="notion-news" class="py-16 max-w-6xl mx-auto px-4">
         <div class="text-center mb-12">
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900">재키 소식 & 사진 갤러리</h2>
-            <p class="text-sm text-slate-500 mt-2">노션(Notion)을 통해 실시간으로 업데이트되는 학원의 생생한 이야기입니다.</p>
+            <p class="text-sm text-slate-500 mt-2">아래 게시판은 노션(Notion) 앱에서 수정하는 내용이 실시간으로 반영됩니다.</p>
         </div>
         
-        <div class="bg-white border border-dashed border-slate-300 rounded-2xl p-12 text-center text-slate-400">
-            <span class="text-4xl inline-block mb-3">🚀</span>
-            <p class="text-sm font-medium text-slate-600">노션 연동 준비 완료</p>
-            <p class="text-xs text-slate-400 mt-1">선생님의 노션 페이지 링크를 연결하면 이곳에 공지 및 사진이 나타납니다.</p>
+        <!-- 🟢 노션 페이지 안전하게 연동 탑재 -->
+        <div class="notion-container shadow-md border border-slate-200 bg-white">
+            <iframe class="notion-iframe" src="https://topaz-deposit-8a9.notion.site/3910c038811c80978461c39eeb14665f"></iframe>
         </div>
     </section>
 
