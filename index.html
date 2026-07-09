@@ -278,13 +278,13 @@
                 const dataRows = lines.slice(1);
 
                 dataRows.reverse().forEach(row => {
-                    if (row.length < 2 || (!row[0] && !row[1])) return;
+                    if (row.length < 2 || (!row[0] && !row[1] && !row[2])) return;
 
                     const date = row[0] ? row[0].trim() : '';
                     const content = row[1] ? row[1].trim() : '';
                     const photoUrl = row[2] ? row[2].trim() : '';
 
-                    if (!date && !content) return;
+                    if (!date && !content && !photoUrl) return;
 
                     const formattedContent = content.replace(/\n/g, '<br>');
 
