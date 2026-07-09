@@ -10,14 +10,15 @@
     <meta name="keywords" content="재키어학원, 구미영어학원, 도량동영어학원, 구미초등영어, 구미중등영어, 파닉스, 영어내신, 수능영어">
     <link rel="canonical" href="https://clayjun71j.github.io/jackie-academy/">
     
-    <!-- 오픈 그래프 -->
+    <!-- 오픈 그래프 (공유 미리보기 세팅) -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="재키어학원 - 시작이 다른 영어 경쟁력">
     <meta property="og:description" content="초등 파닉스부터 중고등 내신·수능 완벽 대비. 1:1 맞춤 피드백과 균형 잡힌 4대 영역 수업.">
     <meta property="og:url" content="https://clayjun71j.github.io/jackie-academy/">
-    <meta property="og:image" content="logo.png">
+    <!-- 💡 og:image는 아래와 같이 절대경로로 지정해주는 것이 카카오톡 등에서 깨지지 않는 비결입니다 -->
+    <meta property="og:image" content="https://clayjun71j.github.io/jackie-academy/logo.png">
 
-    <!-- 🟢 네이버 소유권 확인 태그 -->
+    <!-- 🟢 네이버 소유권 확인 태그 (발급 받으신 네이버 전용 코드로 교체해 주세요) -->
     <meta name="naver-site-verification" content="google26c0abd26e3b0b8" />
 
     <!-- Tailwind CSS 및 구글 폰트 -->
@@ -67,17 +68,12 @@
             <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold tracking-wider uppercase px-3 py-1 rounded-full mb-6 animate-bounce">
                 초등 파닉스부터 중등 내신·수능 영어까지
             </span>
-           <h1 class="text-3xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
-  <div>시작이 달라지면</div>
-  
-  <div class="flex">
-    <span class="opacity-0 select-none">시작이&nbsp;</span>
-    <div>
-      미래가 달라집니다.<br>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">재키어학원</span>입니다.
-    </div>
-  </div>
-</h1>
+            <!-- 💡 히어로 타이틀의 레이아웃을 중앙 정렬이 깨지지 않도록 직관적인 구조로 교정했습니다 -->
+            <h1 class="text-3xl md:text-6xl font-bold tracking-tight text-slate-900 leading-tight mb-6">
+                <span class="block mb-2 md:mb-4">시작이 달라지면</span>
+                <span class="block">미래가 달라집니다.</span>
+                <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">재키어학원</span>
+            </h1>
             <p class="text-base md:text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
                 기본기를 탄탄하게 다지고 에세이, 심화 독해, 수능 영어까지 단계별로 완성하는 맞춤형 커리큘럼을 통해 학생의 잠재력을 끌어내고 최고의 영어 경쟁력을 만들어갑니다.
             </p>
@@ -104,7 +100,7 @@
             <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 hover:shadow-md transition">
                 <div class="w-12 h-12 bg-sky-50 rounded-xl flex items-center justify-center text-xl mb-4">🗣️</div>
                 <h3 class="text-lg font-bold mb-2 text-slate-900">학생별 1:1 맞춤 피드백</h3>
-                <p class="text-sm text-slate-500 leading-relaxed">학생 개개인의 학습 수준과 성취도를 정기적으로 분석하여 부족한 부분은 보완하고, 강점은 더욱 발전시키는 맞춤형 학습을 제공합니다.</p>
+                <p class="text-sm text-slate-500 leading-relaxed">학생 개개인의 학습 수준และ 성취도를 정기적으로 분석하여 부족한 부분은 보완하고, 강점은 더욱 발전시키는 맞춤형 학습을 제공합니다.</p>
             </div>
             <div class="bg-white p-6 rounded-2xl shadow-xs border border-slate-100 hover:shadow-md transition">
                 <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-xl mb-4">📱</div>
@@ -203,7 +199,7 @@
             <div class="bg-slate-100 rounded-2xl h-64 flex flex-col items-center justify-center border border-slate-200 p-6 text-center shadow-xs relative overflow-hidden">
                 <div class="absolute inset-0 bg-slate-200/50 blur-xl"></div>
                 <div class="relative z-10 space-y-4">
-                    <p class="font-bold text-slate-800">📍 도량동 도봉로 82 (6층 602호)</p>
+                    <p class="font-bold text-slate-800">📍찾아오시는 길: 도량동 도봉로 82 (6층 602호)</p>
                     <p class="text-xs text-slate-500">네이버 지도나 카카오맵에서 '재키어학원'을 검색하시면<br>더 정확한 도보 및 차량 경로를 확인하실 수 있습니다.</p>
                     <div class="flex justify-center gap-3">
                         <a href="https://map.naver.com/v5/search/재키어학원" target="_blank" class="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2 rounded-lg text-xs font-medium shadow-xs transition">
@@ -269,10 +265,8 @@
                 const lines = parseCSV(text);
                 const grid = document.getElementById('news-grid');
                 
-                // 🟢 중요: 데이터 파싱 후 조건 판단 전에 기존 로딩 문구를 먼저 비워 꼬임을 원천 차단합니다.
                 grid.innerHTML = ''; 
 
-                // 데이터가 첫 번째 제목 줄 외에 없는 경우
                 if (lines.length <= 1) {
                     const newsSection = document.getElementById('news-section');
                     if (newsSection) {
@@ -309,7 +303,6 @@
 
                     cardHtml += `
                                 <div class="p-6">
-                                    <!-- 🟢 break-keep 클래스도 유기적으로 자동 융합 처리 완료 -->
                                     <p class="text-sm text-slate-600 leading-relaxed font-normal break-keep">${formattedContent}</p>
                                 </div>
                             </div>
@@ -322,12 +315,12 @@
 
                     grid.innerHTML += cardHtml;
                 });
-            })
-            .catch(err => {
-                console.error(err);
-                // 오류 상황 발생 시에도 사용자에게 깨진 화면을 주지 않고 안전하게 섹션을 비워 관리합니다.
-                document.getElementById('news-section').style.display = 'none';
-            });
+            }
+        )
+        .catch(err => {
+            console.error(err);
+            document.getElementById('news-section').style.display = 'none';
+        });
     </script>
 </body>
 </html>
